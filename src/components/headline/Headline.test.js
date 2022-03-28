@@ -1,8 +1,10 @@
+/* eslint-disable testing-library/await-async-query */
 import React from 'react';
 import { shallow } from 'enzyme';
 import Headline from './Headline.component'
 
-import { findByTestAttr } from '../../../Utils';
+
+import { findByTestAttr, checkProps } from '../../../Utils';
 
 const setup = (props = {}) => {
     const component = shallow(<Headline {...props} />);
@@ -10,6 +12,26 @@ const setup = (props = {}) => {
 } 
 
 describe("Headline component", () => {
+
+    describe('Checking prop types', () => {
+        it('Should not throw a warning', () => {
+            const expectedProps = {
+                header: "Test Header",
+                desc: "Test Description",
+                tempArr: [{
+                    fName: "First Name Test",
+                    lName: 'Last',
+                    email: 'test email',
+                    age: 31,
+                    onlineStatus: true
+                }]
+            }
+
+            const propsErr = checkProps(Headline, expectedProps)
+
+            expect(propsErr).toBe(undefined);
+        });
+    });
 
     describe("have props", () => {
         let wrapper;
