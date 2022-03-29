@@ -30,7 +30,7 @@ function App(props) {
   const { posts } = props;
 
   return (
-    <div>
+    <div data-test='appComponent'>
       <Header />
       <section className='main'>
         <Headline header={"Posts"} desc="click the button to render posts" tempArr={tempArr} />
