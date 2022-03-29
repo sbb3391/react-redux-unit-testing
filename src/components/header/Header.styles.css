@@ -19,7 +19,7 @@ header .wrap .logo {
     display: block;
     width: 250px;
     position: absolute;
-    left: 10px; top: 15%;
+    left: 10px; top: 5%;
     -webkit-transform: translateY(-50%);
     -moz-transform: translateY(-50%);
     transform: translateY(-50%);
