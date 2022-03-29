@@ -4,6 +4,7 @@ import Button from "./components/button/button.component";
 import ListItem from "./components/listItem/listItem.component";
 import { connect } from 'react-redux';
 import { fetchPosts } from "./actions";
+import { useState } from "react";
 import './App.css';
 
 const tempArr = [
@@ -18,13 +19,20 @@ const tempArr = [
 
 function App(props) {
 
+  const [hideBtn, updateHideBtn] = useState(false)
+
   const fetch = () => {
     props.fetchPosts();
+    exampleMethod_updatesState();
   }
 
   const configButton = {
     buttonText: 'Get Posts',
     emitEvent: fetch
+  }
+
+  const exampleMethod_updatesState = () => {
+    updateHideBtn(!hideBtn);
   }
 
   const { posts } = props;
@@ -34,7 +42,9 @@ function App(props) {
       <Header />
       <section className='main'>
         <Headline header={"Posts"} desc="click the button to render posts" tempArr={tempArr} />
-        <Button {...configButton} />
+        { !hideBtn && 
+          <Button {...configButton} />
+        }
         {posts.length > 0 && 
           <div>
             {posts.map((post, index) => {
