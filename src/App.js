@@ -5,6 +5,7 @@ import ListItem from "./components/listItem/listItem.component";
 import { connect } from 'react-redux';
 import { fetchPosts } from "./actions";
 import { useState } from "react";
+import PropTypes from 'prop-types'
 import './App.css';
 
 const tempArr = [
@@ -63,6 +64,11 @@ function App(props) {
       
     </div>
   );
+}
+
+App.propTypes = {
+  posts: PropTypes.array,
+  fetchPosts: PropTypes.func
 }
 
 const mapStateToProps = state => {

@@ -15,8 +15,8 @@ describe('Button Component', () => {
             const propsError = checkProps(Button, expectedProps)
 
             expect(propsError).toBe(undefined);
-        })
-    })
+        });
+    });
     
     describe('It renders an HTML Button', () => {
         let wrapper;
