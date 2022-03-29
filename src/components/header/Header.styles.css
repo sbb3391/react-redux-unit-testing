@@ -1,0 +1,32 @@
+header {
+    display: block;
+    width: 100%;
+    margin: 0 auto;
+    padding: 0 10px;
+    height: 130px;
+    background-color: black;
+}
+
+header .wrap {
+    display: block;
+    width: 100px;
+    margin: 0 auto;
+    height: 100%;
+
+}
+
+header .wrap .logo {
+    display: block;
+    width: 250px;
+    position: absolute;
+    left: 10px; top: 15%;
+    -webkit-transform: translateY(-50%);
+    -moz-transform: translateY(-50%);
+    transform: translateY(-50%);
+}
+
+header .wrap .logo img {
+    display: block;
+    width: 120px;
+    margin: 0;
+}
